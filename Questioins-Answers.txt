@@ -1,0 +1,62 @@
+1. What is PostgreSQL?
+Ans: PostgresSQL is a powerful, extreamly stable, object relational, most popular and trustworthy database management system that is used world wide by many famous companies. Why postgresSQL is more popular is, it is Open Sourse, Roust and for it;s High Performance and developed by a string community.
+
+2. What is the purpose of a database schema in PostgreSQL?
+Ans: A Database Schema means the Logical Representation of a database. Schema is the most important thing in PostgresSQL because -
+  - It shows how the data is Organized.
+  - What is thee Relations among other data
+  - All the Constrains are defined which is related to the database
+  - The relation between different entities
+
+3. Explain the primary key and foreign key concepts in PostgreSQL.
+Ans: A primary Key is an unique identifier which helps and used to identify data in queries. Basicly, a table can have a single Primary Key which should be unique and must be NOT NULL.
+On the other hand, a Foreign Key is a column which is used to link two or more tables together and it can be multiple in a table and can contain NULL valus as well.
+
+
+4. What is the difference between the VARCHAR and CHAR data types?
+Ans: CHAR and VARCHAR both are string data types in SQL which is used to store Character values.CHAR provies fixed length of string where VARCHAR provies variable length string storage. That means that in CHAR type, if you input any data less than 10, it will still take the full bytes of the DB. And in VARCHAR it will take the bytes as the data length. CHAR actually fill the blanks spaces  with "Spaces" ot "White Spaces". 
+
+
+5. Explain the purpose of the WHERE clause in a SELECT statement.
+Ans: SELECT is used to retrive all the data from a table. If we want to get the data filtering by any conditions, then we can use WHERE clause. What WHERE clause does is, it actually returns those data which fills the defined condition in SELECT statement.
+
+
+6. What are the LIMIT and OFFSET clauses used for?
+Ans: LIMIT: LIMIT clause is used to limit the data in specific number. Suppose we have 1000 students data in our db. Now we want to see the first 100 students among those students. Then we can simply use LIMIT clause. It works as index (Like javascript array indexing). It starts from the 0 index data. 
+
+OFSET: OFFSET clause tells you that from where the data should start. Let's suppose you have 10 data in your table and you want the data to start from 2nd data. Now what OFFSET will do is, it will just remove the 0 and 1st index data and show the data from 2.
+
+7. How can you perform data modification using UPDATE statements?
+And: UPDATE statement is used to update or edit those values which is already exists in the table. Suppose we have a table called cars and we want to update column1 value where id is 3. The syntax is :
+	UPDATE cars SET column1 = "car1" WHERE id=3
+
+
+8. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+Ans: JOIN is used to join two or more tables together. When we want any data from the help of two tables, then we can use JOIN statement to join those tables together and the most important thing is JOIN is, there must be some common attributes among those table to perform the JOIN operation. Let's suppose there are two tables. One is "Exployee" and another is "Department". In the "Employee" table, there are fields like Employee_No, Employee_name, Address and in the department table, there are Dept_No, Rose, Employee_No. Now we want to get the name of those people who's roles are HR. Now for this we need to make a single table to get the data. For that we can use JOIN statement. Moreover, if we want to get data combining two or more tables, we have to use JOIN.
+
+9. Explain the GROUP BY clause and its role in aggregation operations. 
+Ans: GROUP BY is the most important part which is ued to make group of data based on particulur column. It's actually used with SUM(), AVG(), COUNT() etc aggretion functions. Let's suppose we have a table of "Employee" where there are fields like "E_ID, E_Name, Dept. Now we want to see the department names along with the number of employees working in that department. Then we can simply use GROUP BY clause. The statement will be for this:
+	SELECT Dept, COUNT(*) from Employee GROUP BY Dept.
+
+10. How can you calculate aggregate functions like COUNT, SUM, and AVG in PostgreSQL?
+Ans: COUNT() is used to count how much values are there in a column.
+The syntax is : SELECT COUNT(*) FROM Employee
+
+SUM() is used to add all the values in a clounm. We can get a single value by adding all the values together in a column
+The syntax is: SELECT SUM(frontend_mark + backend_mark) FROM students
+
+AVG() is used to get the average of the values from a column.
+The syntax is like: SELECT AVG(age) FROM students;
+
+MAX() is used to get the maximum value in a column.
+Syntax: SELECT MAX(frontend_mark) FROM students;
+
+MIN() is used to get the smallest value froma column.
+Syntax: SELECT MIN(age) FROM students;
+
+
+11. What is the purpose of an index in PostgreSQL, and how does it optimize query performance?
+Ans: The main purpose of index in PostfreSQL is to increase the speed while getting data from a table. It is more usefull while fetching data from a big table. Index actually helps to remove the unnecessary part while fetching data and reach to the desiered data quickly.While filtering by any clausesit also speed up the query time and returns the value quickly.
+
+12. Explain the concept of a PostgreSQL view and how it differs from a table.
+Ans: View is a virtual table but not actually a table but looks like a table. It is actually a result set of a stored query When we create a table in our db, it takes some physical space there in the db. But view table doesn't take any space anywhere. We can create a virtual table from a physical table. And views can be both Read Only and Updatable. Suppose we have created a view table from a physical table that contains name, age, gender. Now if we change the name value then it will be changes in view as well. But if we change something in view table, it won't change in the physical table. It's like Props in React JS that props can be only changes in parent component not from the child component. 
